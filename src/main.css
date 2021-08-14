@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+.bordered {
+    border-radius: 25px;
+}
+
+.bordered-medium {
+    border-radius: 50px;
+}
+
+.bordered-large {
+    border-radius: 100px;
+}
+
+button {
+    border: none;
+    margin: .5rem 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+button[color="primary"] {
+    background-color: #4267B2;
+    color: white;
+    padding: .5rem 1rem;
+}
+
+button[color="primary"]:hover {
+    filter: drop-shadow(0px 0px 8px #4267B2);
+}
+
+button[disabled] {
+    background-color: #898F9C !important;
+    filter: none !important;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    padding-bottom: .5rem;
+}
+
+input:focus {
+    border-bottom: 1px solid #4267B2;
+}
+
+input[type="radio"] {
+    margin: 0;
+    margin-right: .5rem;
+}
+
+textarea {
+    border-color: #898F9C;
+    outline: none;
+}
+
+textarea::placeholder {
+    color: #898F9C;
+}
+
+textarea:focus {
+    border-color: #4267B2;
+    outline: 2px dashed #4267B2;
+}
+
+textarea:focus::placeholder {
+    color: #4267B2;
+}
+
+select {
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+}
+
+select:focus {
+    border-color: #4267B2;
+}
