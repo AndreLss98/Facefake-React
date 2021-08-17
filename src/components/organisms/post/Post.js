@@ -1,26 +1,14 @@
 import react from 'react';
-import './Post.css';
 
-import Comment from "./Comment";
-import Avatar from './Avatar';
+import { Post, ImgPost } from './styles';
 
-const ImgPost = (props) => {
+import Avatar from '../../atoms/avatar/Avatar';
+import ButtonAtom from '../../atoms/button/Button';
+import Textarea from '../../atoms/textarea/Textarea';
 
-    const style = {
-        background: `url(${props.src}) center no-repeat`,
-        backgroundSize: 'cover',
-        width: '100%',
-        height: '400px',
-        maxWidth: '1000px',
-        margin: '2rem 0'
-    }
+import CommentAtom from "../../atoms/comment/Comment";
 
-    return (
-        <div className="bordered" style={style}></div>
-    );
-}
-
-export default class Post extends react.Component {
+export default class PostComponent extends react.Component {
 
     constructor(props) {
         super(props);
@@ -51,31 +39,32 @@ export default class Post extends react.Component {
     
     render ()  {
         return (
-            <div className="post">
+            <Post>
                 <Avatar src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_9981953457da53251a09f15604cd4f29/grunt.png" />
-                <div>
+                <div style={{ maxWidth: '600px' }}>
                     <h4>{ this.props.title }</h4>
 
                     <p>{ this.props.text }</p>
+                    
+                    <ImgPost className="bordered" src="https://miro.medium.com/max/3200/1*nn9IdQdWqvmWFwmycrBcHA.png" ></ImgPost>
 
-                    <ImgPost src="https://miro.medium.com/max/3200/1*nn9IdQdWqvmWFwmycrBcHA.png" />
-
-                    <form onSubmit={ this.handleSubmit }>
-                        <textarea type="text"
+                    <form onSubmit={ this.handleSubmit } style={{ marginBottom: '2rem' }}>
+                        <Textarea type="text"
                             value={ this.state.newComment }
                             onChange={ this.handleTextChange }
                             rows={ 4 }
                             placeholder="Digite seu comentário..."
-                        ></textarea>
+                            style={{ width: '98%' }}
+                        ></Textarea>
                         
-                        <button type="submit" color="primary" disabled={ this.state.newComment? false : true }>comentar</button>
+                        <ButtonAtom type="submit" color="primary" expand="full" disabled={ this.state.newComment? false : true }>comentar</ButtonAtom>
                     </form>
 
                     { this.state.comments.map((comment, index) => {
-                        return <Comment key={index} text={comment.text} />
+                        return <CommentAtom key={index} text={comment.text} />
                     })}
                 </div>
-            </div>
+            </Post>
         );
     }
 }

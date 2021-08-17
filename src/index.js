@@ -4,7 +4,7 @@ import './main.css';
 
 import reportWebVitals from './reportWebVitals';
 
-import Navbar from './components/Navbar'
+import Navbar from './components/atoms/navbar/Navbar'
 import Router from './routes'
 
 ReactDOM.render(

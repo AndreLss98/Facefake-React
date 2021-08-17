@@ -1,11 +1,9 @@
-import react from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import App from './components/App';
-import Account from './components/Account';
+import Home from './pages/home/Home';
+import AccountPage from './pages/account/AccountPage';
 
 import { isAuthenticated } from './auth';
-
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route {...rest}  render={ props => (
@@ -17,8 +15,8 @@ const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={ App } />
-                <PrivateRoute path="/" component={ Account } />
+                <Route exact path="/" component={ Home } />
+                <PrivateRoute path="/account" component={ AccountPage } />
             </Switch>
         </BrowserRouter>
     );
