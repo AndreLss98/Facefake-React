@@ -1,10 +1,10 @@
-import react from 'react';
+import { Component } from 'react';
 
 import Avatar from '../../components/atoms/avatar/Avatar';
 import Main from '../../components/atoms/main/Main';
 import AccountForm from './organisms/AccountForm/Form';
 
-export default class AccountPage extends react.Component {
+export default class AccountPage extends Component {
 
     render() {
         return (
